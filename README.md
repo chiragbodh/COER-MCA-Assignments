@@ -27,11 +27,11 @@ Each folder contains its answers, source/program files where required, expected 
 - [Pending sources](PENDING-SOURCES.md): material still needed before the remaining assignments can be completed.
 - [Revision guide](REVISION-GUIDE.md): a study order and short viva questions for this batch.
 
-The printable QR PDF is provided separately to the student, using the supplied page-15-to-18 layout. It contains personal lab-sheet details, while repository QR images contain only assignment URLs. **Repository access controls still apply to every QR link.** A QR code does not grant access to a private repository.
+The printable QR PDF is provided separately to the student, using the supplied page-15-to-18 layout. It contains personal lab-sheet details, while repository QR images contain only assignment URLs. The assignment repositories are public as requested, so the QR links can be opened without GitHub sign-in.
 
 ## Existing work
 
-Java Lab Sheets 01-10 remain in [java_Labsheet_MCA203P](https://github.com/chiragbodh/java_Labsheet_MCA203P). The 50 existing MEAN practicals remain in [MEAN_Stack_Labsheets](https://github.com/chiragbodh/MEAN_Stack_Labsheets). Neither repository was modified for this batch, and no new QR codes were made for that existing work.
+Java Lab Sheets 01-10 remain in [java_Labsheet_MCA203P](https://github.com/chiragbodh/java_Labsheet_MCA203P). The 50 existing MEAN practicals remain in [MEAN_Stack_Labsheets](https://github.com/chiragbodh/MEAN_Stack_Labsheets). Neither repository's source files were modified for this batch, and no new QR codes were made for that existing work.
 
 ## Source notes
 

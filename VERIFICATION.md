@@ -4,13 +4,15 @@
 
 | Area | Result and evidence |
 |---|---|
-| Source coverage | Nine unique assignment folders, 50 Q1-Qn answers/tasks. Data Visualization AS03/AS04 mapped to one solution. Existing Java/MEAN lab repositories were not modified. |
+| Source coverage | Nine unique assignment folders, 50 Q1-Qn answers/tasks. Data Visualization AS03/AS04 mapped to one solution. Existing Java/MEAN lab source files were not modified. |
 | Pandas example | Executed with 6 raw rows: 1 duplicate removed, 2 invalid rows quarantined, 3 retained. API error rate 50%, Web 0%. Generated CSV/JSON results are in the assignment's output folder. |
 | Node Assignment 01 | Executed ES6, synchronous, callback and async/await examples; output order matched the README. Express root endpoint returned the expected JSON. |
 | React Assignment 02 | Production build passed. Headless Chrome verified increment and reset; screenshot and web-results.json saved. |
 | Angular Assignment 04 | Production build passed. Browser checked directives, dynamic course route, missing course, child routes, student addition, wildcard 404, shared books, GET/POST, reload, API failure/recovery and Reports child pages. No uncaught page errors. |
 | Angular lazy loading | Build produced a separate Reports chunk. Browser network verification observed that extra JavaScript request when opening Reports from Home. |
 | MongoDB Assignment 05 | Integration test against a real isolated mongod process passed: student CRUD, salary sorting/aggregation, all book-store methods and duplicate ISBN, every product/task CRUD endpoint, invalid IDs/fields, malformed JSON and missing records. The actual fetch client is also executed. |
+
+| QR pack | All 9 PNG QR images and all 9 QR codes rendered from the printable PDF decoded to the exact assignment URLs. Page layout visually checked against the supplied reference. |
 
 ## Evidence
 
