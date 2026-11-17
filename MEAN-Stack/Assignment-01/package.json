@@ -1,0 +1,1 @@
+{"name":"mca-node-assignment-01","version":"1.0.0","private":true,"type":"module","engines":{"node":">=24"},"scripts":{"start":"node server.js","dev":"nodemon server.js","examples":"node es6.js && node blocking.cjs && node nonblocking.cjs && node async-await.js"},"dependencies":{"express":"^5.1.0"},"devDependencies":{"nodemon":"^3.1.10"}}

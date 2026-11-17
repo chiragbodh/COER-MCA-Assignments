@@ -1,0 +1,12 @@
+<h2>API users</h2>
+@if(loading()){<p role="status">Loading users...</p>}
+@if(error()){<p role="alert">{{error()}}</p>}
+<button type="button" (click)="load()" [disabled]="loading()||saving()">Reload users</button>
+<form #form="ngForm" (ngSubmit)="save()">
+  <label>User name<input name="name" [(ngModel)]="name" required maxlength="100"></label>
+  <label>Email<input name="email" [(ngModel)]="email" type="email" required email maxlength="200"></label>
+  <button [disabled]="form.invalid||saving()||loading()||!name.trim()">{{saving()?'Saving...':'Save user'}}</button>
+</form>
+<p role="status">{{message()}}</p>
+<ul>@for(user of users();track user.id){<li>{{user.name}} - {{user.email}}</li>}</ul>
+@if(!loading()&&!error()&&users().length===0){<p>No users yet.</p>}

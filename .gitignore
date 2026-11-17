@@ -1,0 +1,10 @@
+node_modules/
+.angular/
+dist/
+.env
+!.env.example
+__pycache__/
+*.pyc
+.local-db/
+playwright-report/
+test-results/
