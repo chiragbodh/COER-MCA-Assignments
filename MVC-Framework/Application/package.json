@@ -1,0 +1,6 @@
+{
+  "name": "mca-mvc-lab-verification",
+  "private": true,
+  "scripts": {"test": "node tests/integration.cjs", "test:api": "node tests/postman.cjs"},
+  "devDependencies": {"playwright": "1.62.1", "newman": "6.2.3"}
+}

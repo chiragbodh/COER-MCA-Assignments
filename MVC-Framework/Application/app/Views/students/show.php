@@ -1,0 +1,1 @@
+<dl><dt>Student ID</dt><dd><?= e($student['id']) ?></dd><dt>Name</dt><dd><?= e($student['name']) ?></dd><dt>Email</dt><dd><?= e($student['email']) ?></dd><dt>Course ID</dt><dd><?= e($student['course_id']) ?></dd></dl><p><a href="/students">Back to students</a></p>

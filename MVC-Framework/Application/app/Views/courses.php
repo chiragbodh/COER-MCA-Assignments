@@ -1,0 +1,1 @@
+<div class="cards"><?php foreach($rows as $course): ?><article><h2><?= e($course['name']) ?></h2><p>Duration: <?= e($course['duration']) ?></p><p>Course ID: <?= e($course['id']) ?></p><a href="/courses/<?= e($course['id']) ?>">Open course details</a></article><?php endforeach ?></div>

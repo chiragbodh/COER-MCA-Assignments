@@ -1,0 +1,3 @@
+<form class="panel" method="post" action="/customers"><?= csrf() ?>
+<?php foreach(['name'=>'Name','email'=>'Email','phone'=>'Phone'] as $key=>$label): ?><label for="<?= e($key) ?>"><?= e($label) ?></label><input id="<?= e($key) ?>" name="<?= e($key) ?>" type="<?= $key==='email'?'email':($key==='phone'?'tel':'text') ?>" required value="<?= e($old[$key]??'') ?>"><?php endforeach ?><button type="submit">Register customer</button></form>
+<h2>Registered customers</h2><ul><?php foreach($rows as $row): ?><li><?= e($row['name']) ?> · <?= e($row['email']) ?> · <?= e($row['phone']) ?></li><?php endforeach ?></ul>

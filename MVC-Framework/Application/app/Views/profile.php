@@ -1,0 +1,1 @@
+<dl><dt>Name</dt><dd><?= e($user['name']) ?></dd><dt>Email</dt><dd><?= e($user['email']) ?></dd><dt>Role</dt><dd><?= e($user['role']) ?></dd></dl><p>Roles are assigned by an administrator through the CLI. Public registration creates student accounts only.</p>

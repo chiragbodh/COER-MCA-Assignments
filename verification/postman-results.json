@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "requests": 9,
+  "assertions": 9,
+  "failures": [],
+  "checks": [
+    {
+      "name": "Login form 200",
+      "passed": true
+    },
+    {
+      "name": "Login redirect",
+      "passed": true
+    },
+    {
+      "name": "Authenticated",
+      "passed": true
+    },
+    {
+      "name": "List response",
+      "passed": true
+    },
+    {
+      "name": "Created",
+      "passed": true
+    },
+    {
+      "name": "Read created record",
+      "passed": true
+    },
+    {
+      "name": "Updated",
+      "passed": true
+    },
+    {
+      "name": "Deleted",
+      "passed": true
+    },
+    {
+      "name": "No longer exists",
+      "passed": true
+    }
+  ]
+}

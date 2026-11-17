@@ -1,0 +1,1 @@
+<div class="cards"><?php foreach($rows as $row): ?><article><h2><?= e($row['name']) ?></h2><?php foreach($row as $key=>$value): if($key==='name')continue; ?><p><strong><?= e(ucfirst($key)) ?>:</strong> <?= e($value) ?></p><?php endforeach ?></article><?php endforeach ?></div>

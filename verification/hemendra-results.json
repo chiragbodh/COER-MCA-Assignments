@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "runtime": {
+    "php": "8.4.27",
+    "database": "MariaDB 11.4.5 via PDO MySQL"
+  },
+  "checks": [
+    "Guest dashboard redirects; guest API returns 401",
+    "Password login and session ID rotation",
+    "Modules, clean parameter routes, missing-record 404 and method 405",
+    "Missing CSRF token rejected",
+    "Product validation errors and preserved values",
+    "Valid image stored/served; fake image rejected",
+    "Browser student create, read, update, search and delete",
+    "Prepared search resists injection; course filter, sorting and pagination",
+    "Stored XSS is rendered as escaped text",
+    "Customer registration and redirect/flash",
+    "REST GET/POST/PUT/DELETE, JSON, 201/400/409/422 and missing record",
+    "Student read access and server-enforced write denial",
+    "Teacher create access and admin-only delete",
+    "POST logout destroys authenticated access",
+    "Public account registration with hashed password",
+    "AIML responsive 1/2/4 grid, no overflow, delegated events and HTML validation"
+  ],
+  "consoleErrors": []
+}

@@ -1,11 +1,11 @@
 # Sources still needed
 
-Hemendra sir: five AIML assignments and MVC Lab Sheets 1–7 have now been received. The two copies of MVC Lab Sheet 1 are identical. AIML Lab Sheet 1 was not supplied; the student authorized completing the twelve available sets first.
+Hemendra sir's supplied work is completed: AIML Assignments 1–5, AIML Lab Sheet 1 as identified by the student, and MVC Lab Sheets 1–7. The AIML lab repeats Assignment 1 and uses shared answers plus a practical. Duplicate MVC Lab 1 copies are counted once.
 
-Other missing sources from the partial study pack:
+The wider all-subject request still needs original files for:
 - Java theory: MCA203T-AS01 through AS05.
-- Software Testing and Quality Assurance: the three ERP assignment entries (include titles to distinguish reused filenames).
+- Software Testing and Quality Assurance: the three ERP entries, including the complete-syllabus/25-assignment document. Include titles to distinguish reused filenames.
 - Business Economics: OSB008T-AS01 and AS02.
-- Data Visualization: MCA209D-AS08, plus MCA209D-AS07 syllabus for reference.
+- Data Visualization: MCA209D-AS08 (additional Assignment 1 entry), plus MCA209D-AS07 syllabus for reference.
 
-MEAN Stack and Java lab assignments already exist in the student's repositories. They are excluded from new solutions and QR codes. Question banks are for later exam preparation and are not counted as assignments.
+MEAN Stack and Java labs already exist and are excluded from new solutions and QR production. Question banks are revision references. Unavailable assignments and empty placeholders receive no QR.

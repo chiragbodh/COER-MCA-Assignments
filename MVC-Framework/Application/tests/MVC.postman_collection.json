@@ -1,0 +1,246 @@
+{
+  "info": {
+    "name": "MCA MVC Lab 7 \u2014 Student REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Use a disposable local database. Disable automatic redirects for the login request/run. Set email/password locally; never commit credentials. Cookies are retained by the collection runner."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8091"
+    },
+    {
+      "key": "email",
+      "value": "admin@example.test"
+    },
+    {
+      "key": "password",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "01 Login form and CSRF",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/login"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Login form 200',()=>pm.response.to.have.status(200));",
+              "const m=pm.response.text().match(/name=\"_csrf\" value=\"([^\"]+)\"/); pm.expect(m).not.to.equal(null); pm.collectionVariables.set('loginCsrf',m[1]);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 Sign in with local admin account",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "{{baseUrl}}/login",
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "_csrf",
+              "value": "{{loginCsrf}}",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{email}}",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Login redirect',()=>pm.response.to.have.status(303));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 Get API CSRF token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/csrf"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Authenticated',()=>pm.response.to.have.status(200)); pm.collectionVariables.set('csrf',pm.response.json().csrf_token); pm.collectionVariables.set('testEmail','postman.'+Date.now()+'@example.test');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 List students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/students"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('List response',()=>{pm.response.to.have.status(200);pm.expect(pm.response.json().rows).to.be.an('array');});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 Create student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-CSRF-Token",
+            "value": "{{csrf}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/students",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Postman Demo\", \"email\": \"{{testEmail}}\", \"course_id\": 1}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Created',()=>pm.response.to.have.status(201)); pm.collectionVariables.set('studentId',pm.response.json().student.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 Read student",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/students/{{studentId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Read created record',()=>{pm.response.to.have.status(200);pm.expect(pm.response.json().student.name).to.equal('Postman Demo');});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 Update student",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-CSRF-Token",
+            "value": "{{csrf}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/students/{{studentId}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Postman Updated\", \"email\": \"{{testEmail}}\", \"course_id\": 2}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Updated',()=>{pm.response.to.have.status(200);pm.expect(pm.response.json().student.name).to.equal('Postman Updated');});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "08 Delete student",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "X-CSRF-Token",
+            "value": "{{csrf}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/students/{{studentId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Deleted',()=>pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "09 Confirm absence",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/students/{{studentId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('No longer exists',()=>pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

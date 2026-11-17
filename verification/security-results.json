@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Public registration ignores attempted admin role",
+    "Registered account can sign in but cannot access writer routes",
+    "Session cookie is HttpOnly and SameSite=Lax",
+    "Five failed login attempts recorded; sixth request returns 429"
+  ]
+}
